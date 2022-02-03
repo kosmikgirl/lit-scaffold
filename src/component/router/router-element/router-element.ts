@@ -2,14 +2,17 @@ import {LitElement} from 'lit';
 import {html} from 'lit/static-html.js';
 import {customElement, state} from 'lit/decorators.js';
 import {Match} from 'navigo';
-import router from '../../router/router';
-import {routes} from '../../router/routes';
-import {RouteType} from '../../data/type';
+import {isLocaleEnabled} from '../../../config/locale-config';
+import router from '../../../router/router';
+import {routes} from '../../../router/routes';
+import {RouteType} from '../../../data/type';
+import {styles} from './styles';
 
 @customElement('router-element')
 export default class RouterElement extends LitElement {
-  @state()
-  private activeRoute = {
+  static styles = styles;
+
+  @state() private activeRoute = {
     tag: routes[0].tag,
     routeData: {},
   };
@@ -17,7 +20,7 @@ export default class RouterElement extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
-    const processedRoutes = import.meta.env.VAR_IS_LOCALE_ENABLED
+    const processedRoutes = isLocaleEnabled
       ? routes.map(
           (route: RouteType): RouteType => ({
             ...route,
