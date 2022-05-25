@@ -6,5 +6,6 @@ export enum RouteDataParam {
 export enum RouteNames {
   HOME = 'home',
   ABOUT = 'about',
+  CONTACT = 'contact',
   NOT_FOUND = 'not-found',
 }

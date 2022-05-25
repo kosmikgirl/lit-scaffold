@@ -17,6 +17,11 @@ export const routes: ReadonlyArray<RouteType> = [
     tag: literal`about-page`,
   },
   {
+    name: RouteNames.CONTACT,
+    path: '/contact',
+    tag: literal`about-page`,
+  },
+  {
     name: RouteNames.NOT_FOUND,
     path: '/404',
     tag: literal`not-found-page`,

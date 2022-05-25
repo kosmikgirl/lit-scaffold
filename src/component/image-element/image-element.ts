@@ -12,7 +12,8 @@ export class ImageElement extends LitElement {
 
   @state() private srcSet: string = '';
 
-  @query('img') $img: HTMLImageElement;
+  @query('img')
+  $img!: HTMLImageElement;
 
   private lazyLoadObserver: IntersectionObserver;
 

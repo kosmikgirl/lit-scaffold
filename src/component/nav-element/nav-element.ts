@@ -22,6 +22,7 @@ export class NavElement extends LitElement {
       >
         About
       </router-link>
+      <router-link to="/contact">Contact Us</router-link>
       <router-link to="xyz">Not found</router-link>
     </nav>`;
   }
